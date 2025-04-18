@@ -8,10 +8,19 @@ logger = logging.getLogger(__name__)
 
 
 def test_navigate_and_check_title(search_page: SearchPage):
+    """
+    Test name: Verify navigate to the url and check title
+    """
+    
     expect(search_page.page).to_have_title(re.compile("Google"))
     logger.info('Test passed: Title is Google')
 
+
 def test_hover_on_button_and_verify_text_change(page: Page, search_page: SearchPage):
+    """
+    Test name: Verify button text change from "I'm feeling lucky" to some random text on hover
+    """
+    
     text_before_hover = search_page.get_text_from_luck_button_before()
     assert text_before_hover == 'I\'m Feeling Lucky'
     search_page.hover_over()
@@ -20,7 +29,12 @@ def test_hover_on_button_and_verify_text_change(page: Page, search_page: SearchP
     assert text_after_hover != 'I\'m Feeling Lucky'
     logger.info('Test passed: Hover over and text changed')
 
+
 def test_verify_search_result_autocomplete(search_page: SearchPage, search_results_page: SearchResultsPage):
+    """
+    Test name: Verify autocomplete suggestions on inputting search string and search results
+    """
+    
     search_page.input_text_in_search_field('Money Forwar')
     search_page.click_autocomplete_suggestion()
 
