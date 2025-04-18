@@ -4,13 +4,6 @@ from playwright.sync_api import Page, expect
 from pytest_playwright.pytest_playwright import page
 from page_classes import SearchPage, SearchResultsPage
 
-
-# To run these test
-# install python3
-# pip install pytest-playwright
-# playwright install
-# pip install pytest-html
-
 logger = logging.getLogger(__name__)
 
 
