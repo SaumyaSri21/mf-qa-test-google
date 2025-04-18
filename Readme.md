@@ -22,4 +22,4 @@
 
 ## Running the test
 
-To execute the tests, run `pytest --headed` command. After the tests are run `report.html` will be generated.
+To execute the tests, run `pytest --html=report.html --self-contained-html --headed` command. After the tests are run `report.html` will be generated.
